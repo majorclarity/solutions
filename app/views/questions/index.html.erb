@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  Questions
+</h1>
+
+<span id="question-count">
+  <%= Question.count %> questions asked! 
+</span>
+
+<% @questions.each do |question| %>
+  <h2><%= link_to question.title, question %></h2>
+  <p><%= question.details %></p>
+<% end %>
+
+<br>
+
+<%= link_to 'New Question', new_question_path %>
